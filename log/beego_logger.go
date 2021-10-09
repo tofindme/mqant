@@ -25,7 +25,6 @@ import (
 //NewBeegoLogger beego
 func NewBeegoLogger(debug bool, ProcessID string, Logdir string, settings map[string]interface{}) *logs.BeeLogger {
 	log := logs.NewLogger()
-	log.ProcessID = ProcessID
 	log.EnableFuncCallDepth(true)
 	//log.Async(1024) //同步打印,可能影响性能
 	log.SetLogFuncCallDepth(4)
@@ -33,9 +32,7 @@ func NewBeegoLogger(debug bool, ProcessID string, Logdir string, settings map[st
 		//控制台
 		log.SetLogger(logs.AdapterConsole)
 	}
-	if contenttype, ok := settings["contenttype"]; ok {
-		log.SetContentType(contenttype.(string))
-	}
+
 	if f, ok := settings["file"]; ok {
 		ff := f.(map[string]interface{})
 		Prefix := ""
@@ -69,13 +66,6 @@ func NewBeegoLogger(debug bool, ProcessID string, Logdir string, settings map[st
 			logs.Error(err)
 		}
 		log.SetLogger(logs.AdapterMultiFile, string(config))
-	}
-	if dingtalk, ok := settings["dingtalk"]; ok {
-		config, err := json.Marshal(dingtalk)
-		if err != nil {
-			logs.Error(err)
-		}
-		log.SetLogger(logs.AdapterDingtalk, string(config))
 	}
 	if slack, ok := settings["slack"]; ok {
 		config, err := json.Marshal(slack)

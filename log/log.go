@@ -17,7 +17,6 @@ package log
 
 import (
 	beegolog "github.com/tofindme/mqant/log/beego"
-	mqanttools "github.com/tofindme/mqant/utils"
 )
 
 var beego *beegolog.BeeLogger
@@ -46,106 +45,30 @@ func BiBeego() *beegolog.BeeLogger {
 	return bi
 }
 
-// CreateRootTrace CreateRootTrace
-func CreateRootTrace() TraceSpan {
-	return &TraceSpanImp{
-		Trace: mqanttools.GenerateID().String(),
-		Span:  mqanttools.GenerateID().String(),
-	}
-}
-
-// CreateTrace CreateTrace
-func CreateTrace(trace, span string) TraceSpan {
-	return &TraceSpanImp{
-		Trace: trace,
-		Span:  span,
-	}
-}
-
-// BiReport BiReport
-func BiReport(msg string) {
-	//gLogger.doPrintf(debugLevel, printDebugLevel, format, a...)
-	l := BiBeego()
-	if l != nil {
-		l.BiReport(msg)
-	}
-}
-
 // Debug Debug
 func Debug(format string, a ...interface{}) {
 	//gLogger.doPrintf(debugLevel, printDebugLevel, format, a...)
-	LogBeego().Debug(nil, format, a...)
+	LogBeego().Debug( format, a...)
 }
 
 // Info Info
 func Info(format string, a ...interface{}) {
 	//gLogger.doPrintf(releaseLevel, printReleaseLevel, format, a...)
-	LogBeego().Info(nil, format, a...)
+	LogBeego().Info( format, a...)
 }
 
 // Error Error
 func Error(format string, a ...interface{}) {
 	//gLogger.doPrintf(errorLevel, printErrorLevel, format, a...)
-	LogBeego().Error(nil, format, a...)
+	LogBeego().Error( format, a...)
 }
 
 // Warning Warning
 func Warning(format string, a ...interface{}) {
 	//gLogger.doPrintf(fatalLevel, printFatalLevel, format, a...)
-	LogBeego().Warning(nil, format, a...)
+	LogBeego().Warning( format, a...)
 }
 
-// TDebug TDebug
-func TDebug(span TraceSpan, format string, a ...interface{}) {
-	if span != nil {
-		LogBeego().Debug(
-			&beegolog.BeegoTraceSpan{
-				Trace: span.TraceId(),
-				Span:  span.SpanId(),
-			}, format, a...)
-	} else {
-		LogBeego().Debug(nil, format, a...)
-	}
-}
-
-// TInfo TInfo
-func TInfo(span TraceSpan, format string, a ...interface{}) {
-	if span != nil {
-		LogBeego().Info(
-			&beegolog.BeegoTraceSpan{
-				Trace: span.TraceId(),
-				Span:  span.SpanId(),
-			}, format, a...)
-	} else {
-		LogBeego().Info(nil, format, a...)
-	}
-}
-
-// TError TError
-func TError(span TraceSpan, format string, a ...interface{}) {
-	if span != nil {
-		LogBeego().Error(
-			&beegolog.BeegoTraceSpan{
-				Trace: span.TraceId(),
-				Span:  span.SpanId(),
-			}, format, a...)
-	} else {
-		LogBeego().Error(nil, format, a...)
-	}
-}
-
-// TWarning TWarning
-func TWarning(span TraceSpan, format string, a ...interface{}) {
-	if span != nil {
-		LogBeego().Warning(
-			&beegolog.BeegoTraceSpan{
-				Trace: span.TraceId(),
-				Span:  span.SpanId(),
-			}, format, a...)
-	} else {
-		LogBeego().Warning(nil, format, a...)
-	}
-}
 
 // Close Close
 func Close() {
