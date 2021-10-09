@@ -13,7 +13,7 @@
 // limitations under the License.
 package defaultrpc
 
-import rpcpb "github.com/szxby/myMqant/rpc/pb"
+import rpcpb "github.com/tofindme/mqant/rpc/pb"
 
 type ClinetCallInfo struct {
 	correlation_id string

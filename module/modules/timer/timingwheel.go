@@ -5,7 +5,7 @@ import (
 	"math"
 	"time"
 
-	"github.com/szxby/myMqant/log"
+	"github.com/tofindme/mqant/log"
 )
 
 var timeWheel *TimeWheel

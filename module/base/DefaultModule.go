@@ -19,9 +19,9 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
 )
 
 // DefaultModule 模块结构

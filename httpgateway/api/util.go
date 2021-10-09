@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"strings"
 
-	api "github.com/szxby/myMqant/httpgateway/proto"
+	api "github.com/tofindme/mqant/httpgateway/proto"
 )
 
 func RequestToProto(r *http.Request) (*api.Request, error) {

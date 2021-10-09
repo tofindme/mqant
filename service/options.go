@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/szxby/myMqant/registry"
-	"github.com/szxby/myMqant/server"
+	"github.com/tofindme/mqant/registry"
+	"github.com/tofindme/mqant/server"
 )
 
 // Service Service

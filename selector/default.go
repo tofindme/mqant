@@ -1,6 +1,6 @@
 package selector
 
-import "github.com/szxby/myMqant/registry"
+import "github.com/tofindme/mqant/registry"
 
 type defaultSelector struct {
 	so Options

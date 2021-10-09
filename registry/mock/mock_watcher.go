@@ -3,7 +3,7 @@ package mock
 import (
 	"errors"
 
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 type mockWatcher struct {

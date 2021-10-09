@@ -23,8 +23,8 @@ import (
 	"sync"
 
 	"github.com/pkg/errors"
-	"github.com/szxby/myMqant/gate"
-	"github.com/szxby/myMqant/log"
+	"github.com/tofindme/mqant/gate"
+	"github.com/tofindme/mqant/log"
 )
 
 type handler struct {

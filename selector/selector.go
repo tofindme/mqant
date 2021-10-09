@@ -4,7 +4,7 @@ package selector
 import (
 	"errors"
 
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 // Selector builds on the registry as a mechanism to pick nodes

@@ -5,9 +5,9 @@ import (
 	"context"
 
 	"github.com/pborman/uuid"
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
 )
 
 // Server Server

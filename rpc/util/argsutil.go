@@ -19,10 +19,10 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	mqanttools "github.com/szxby/myMqant/utils"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	mqanttools "github.com/tofindme/mqant/utils"
 	"google.golang.org/protobuf/proto"
 )
 

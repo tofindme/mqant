@@ -5,13 +5,13 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	"github.com/szxby/myMqant/registry"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	defaultrpc "github.com/szxby/myMqant/rpc/base"
-	"github.com/szxby/myMqant/utils/lib/addr"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	"github.com/tofindme/mqant/registry"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	defaultrpc "github.com/tofindme/mqant/rpc/base"
+	"github.com/tofindme/mqant/utils/lib/addr"
 )
 
 type rpcServer struct {

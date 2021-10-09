@@ -5,11 +5,11 @@ import (
 	"context"
 	"net/http"
 
-	httpgatewayapi "github.com/szxby/myMqant/httpgateway/api"
-	"github.com/szxby/myMqant/httpgateway/errors"
-	go_api "github.com/szxby/myMqant/httpgateway/proto"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
+	httpgatewayapi "github.com/tofindme/mqant/httpgateway/api"
+	"github.com/tofindme/mqant/httpgateway/errors"
+	go_api "github.com/tofindme/mqant/httpgateway/proto"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
 )
 
 //APIHandler 网关handler

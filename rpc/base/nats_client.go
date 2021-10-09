@@ -20,11 +20,11 @@ import (
 	"time"
 
 	"github.com/nats-io/nats.go"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	rpcpb "github.com/szxby/myMqant/rpc/pb"
-	mqanttools "github.com/szxby/myMqant/utils"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	rpcpb "github.com/tofindme/mqant/rpc/pb"
+	mqanttools "github.com/tofindme/mqant/utils"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -24,9 +24,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/szxby/myMqant/module"
-	"github.com/szxby/myMqant/registry"
-	"github.com/szxby/myMqant/selector"
+	"github.com/tofindme/mqant/module"
+	"github.com/tofindme/mqant/registry"
+	"github.com/tofindme/mqant/selector"
 )
 
 // Service represents an API service

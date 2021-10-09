@@ -19,12 +19,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	rpcpb "github.com/szxby/myMqant/rpc/pb"
-	argsutil "github.com/szxby/myMqant/rpc/util"
-	"github.com/szxby/myMqant/utils/uuid"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	rpcpb "github.com/tofindme/mqant/rpc/pb"
+	argsutil "github.com/tofindme/mqant/rpc/util"
+	"github.com/tofindme/mqant/utils/uuid"
 	"google.golang.org/protobuf/proto"
 )
 

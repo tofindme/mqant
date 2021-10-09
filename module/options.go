@@ -4,10 +4,10 @@ import (
 	"time"
 
 	"github.com/nats-io/nats.go"
-	"github.com/szxby/myMqant/registry"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	rpcpb "github.com/szxby/myMqant/rpc/pb"
-	"github.com/szxby/myMqant/selector"
+	"github.com/tofindme/mqant/registry"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	rpcpb "github.com/tofindme/mqant/rpc/pb"
+	"github.com/tofindme/mqant/selector"
 )
 
 // Option 配置项

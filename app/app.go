@@ -31,15 +31,15 @@ import (
 
 	"github.com/nats-io/nats.go"
 	"github.com/pkg/errors"
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	basemodule "github.com/szxby/myMqant/module/base"
-	"github.com/szxby/myMqant/module/modules"
-	"github.com/szxby/myMqant/registry"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	"github.com/szxby/myMqant/selector"
-	"github.com/szxby/myMqant/selector/cache"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	basemodule "github.com/tofindme/mqant/module/base"
+	"github.com/tofindme/mqant/module/modules"
+	"github.com/tofindme/mqant/registry"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	"github.com/tofindme/mqant/selector"
+	"github.com/tofindme/mqant/selector/cache"
 )
 
 type resultInfo struct {

@@ -21,8 +21,8 @@ import (
 	"math"
 	"sync"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/network"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/network"
 )
 
 var notAlive = errors.New("Connection was dead")

@@ -21,15 +21,15 @@ import (
 	"os"
 
 	"github.com/pkg/errors"
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	rpcpb "github.com/szxby/myMqant/rpc/pb"
-	"github.com/szxby/myMqant/selector"
-	"github.com/szxby/myMqant/server"
-	"github.com/szxby/myMqant/service"
-	mqanttools "github.com/szxby/myMqant/utils"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	rpcpb "github.com/tofindme/mqant/rpc/pb"
+	"github.com/tofindme/mqant/selector"
+	"github.com/tofindme/mqant/server"
+	"github.com/tofindme/mqant/service"
+	mqanttools "github.com/tofindme/mqant/utils"
 )
 
 // BaseModule 默认的RPCModule实现

@@ -21,7 +21,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/szxby/myMqant/log"
+	"github.com/tofindme/mqant/log"
 )
 
 const (

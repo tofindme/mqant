@@ -14,7 +14,7 @@ import (
 	"go.etcd.io/etcd/clientv3"
 
 	hash "github.com/mitchellh/hashstructure"
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 	"go.etcd.io/etcd/etcdserver/api/v3rpc/rpctypes"
 )
 

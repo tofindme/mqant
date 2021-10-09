@@ -19,7 +19,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	logs "github.com/szxby/myMqant/log/beego"
+	logs "github.com/tofindme/mqant/log/beego"
 )
 
 //NewBeegoLogger beego

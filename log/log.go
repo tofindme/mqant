@@ -16,8 +16,8 @@
 package log
 
 import (
-	beegolog "github.com/szxby/myMqant/log/beego"
-	mqanttools "github.com/szxby/myMqant/utils"
+	beegolog "github.com/tofindme/mqant/log/beego"
+	mqanttools "github.com/tofindme/mqant/utils"
 )
 
 var beego *beegolog.BeeLogger

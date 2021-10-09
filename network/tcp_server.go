@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/szxby/myMqant/log"
+	"github.com/tofindme/mqant/log"
 )
 
 // TCPServer tcp服务器

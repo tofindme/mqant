@@ -8,10 +8,10 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/szxby/myMqant/gate"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	argsutil "github.com/szxby/myMqant/rpc/util"
+	"github.com/tofindme/mqant/gate"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	argsutil "github.com/tofindme/mqant/rpc/util"
 )
 
 // FSelector 服务节点选择函数，可以自定义服务筛选规则

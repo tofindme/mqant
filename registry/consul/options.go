@@ -6,7 +6,7 @@ import (
 
 	consul "github.com/hashicorp/consul/api"
 
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 // Connect specifies services should be registered as Consul Connect services

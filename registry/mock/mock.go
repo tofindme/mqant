@@ -1,7 +1,7 @@
 package mock
 
 import (
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 type mockRegistry struct {

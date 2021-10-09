@@ -1,7 +1,7 @@
 package selector
 
 import (
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 // FilterEndpoint is an endpoint based Select Filter which will

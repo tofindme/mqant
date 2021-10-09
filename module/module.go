@@ -19,10 +19,10 @@ import (
 	"context"
 
 	"github.com/nats-io/nats.go"
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/registry"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	"github.com/szxby/myMqant/selector"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/registry"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	"github.com/tofindme/mqant/selector"
 )
 
 // ProtocolMarshal 数据包装

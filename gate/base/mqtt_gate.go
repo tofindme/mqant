@@ -18,12 +18,12 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/gate"
-	"github.com/szxby/myMqant/log"
-	"github.com/szxby/myMqant/module"
-	basemodule "github.com/szxby/myMqant/module/base"
-	"github.com/szxby/myMqant/network"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/gate"
+	"github.com/tofindme/mqant/log"
+	"github.com/tofindme/mqant/module"
+	basemodule "github.com/tofindme/mqant/module/base"
+	"github.com/tofindme/mqant/network"
 )
 
 var RPCParamSessionType = gate.RPCParamSessionType

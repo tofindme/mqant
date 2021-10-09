@@ -6,9 +6,9 @@ package modules
 import (
 	"time"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/module"
-	timewheel "github.com/szxby/myMqant/module/modules/timer"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/module"
+	timewheel "github.com/tofindme/mqant/module/modules/timer"
 )
 
 var TimerModule = func() module.Module {
@@ -28,7 +28,7 @@ func (m *Timer) GetType() string {
 func (m *Timer) OnInit(app module.App, settings *conf.ModuleSettings) {
 	timewheel.SetTimeWheel(timewheel.New(10*time.Millisecond, 36))
 	// 时间轮使用方式
-	//import "github.com/szxby/myMqant/module/modules/timer"
+	//import "github.com/tofindme/mqant/module/modules/timer"
 	//执行过的定时器会自动被删除
 	//timewheel.GetTimeWheel().AddTimer(66 * time.Millisecond , nil,self.Update)
 	//

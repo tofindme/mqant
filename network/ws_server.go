@@ -18,7 +18,7 @@ package network
 //
 //import (
 //	"crypto/tls"
-//	"github.com/szxby/myMqant/log"
+//	"github.com/tofindme/mqant/log"
 //	"net"
 //	"net/http"
 //	"sync"

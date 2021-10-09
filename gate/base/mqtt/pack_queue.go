@@ -22,8 +22,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/szxby/myMqant/conf"
-	"github.com/szxby/myMqant/network"
+	"github.com/tofindme/mqant/conf"
+	"github.com/tofindme/mqant/network"
 )
 
 // Tcp write queue

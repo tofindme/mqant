@@ -18,7 +18,7 @@ package gate
 import (
 	"time"
 
-	"github.com/szxby/myMqant/server"
+	"github.com/tofindme/mqant/server"
 )
 
 //Option 网关配置项

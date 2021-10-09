@@ -19,7 +19,7 @@ import (
 	"context"
 	"reflect"
 
-	rpcpb "github.com/szxby/myMqant/rpc/pb"
+	rpcpb "github.com/tofindme/mqant/rpc/pb"
 )
 
 // FunctionInfo handler接口信息

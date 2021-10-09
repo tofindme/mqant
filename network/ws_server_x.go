@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/szxby/myMqant/log"
-	iptool "github.com/szxby/myMqant/utils/ip"
+	"github.com/tofindme/mqant/log"
+	iptool "github.com/tofindme/mqant/utils/ip"
 	"golang.org/x/net/websocket"
 )
 

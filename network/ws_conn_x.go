@@ -21,7 +21,7 @@ import (
 	"sync"
 	"time"
 
-	iptool "github.com/szxby/myMqant/utils/ip"
+	iptool "github.com/tofindme/mqant/utils/ip"
 	"golang.org/x/net/websocket"
 )
 

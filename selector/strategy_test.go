@@ -3,7 +3,7 @@ package selector
 import (
 	"testing"
 
-	"github.com/szxby/myMqant/registry"
+	"github.com/tofindme/mqant/registry"
 )
 
 func TestStrategies(t *testing.T) {

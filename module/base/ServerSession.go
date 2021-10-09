@@ -18,10 +18,10 @@ package basemodule
 import (
 	"context"
 
-	"github.com/szxby/myMqant/module"
-	"github.com/szxby/myMqant/registry"
-	mqrpc "github.com/szxby/myMqant/rpc"
-	defaultrpc "github.com/szxby/myMqant/rpc/base"
+	"github.com/tofindme/mqant/module"
+	"github.com/tofindme/mqant/registry"
+	mqrpc "github.com/tofindme/mqant/rpc"
+	defaultrpc "github.com/tofindme/mqant/rpc/base"
 )
 
 // NewServerSession 创建一个节点实例
