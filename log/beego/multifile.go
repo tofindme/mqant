@@ -16,6 +16,7 @@ package logs
 
 import (
 	"encoding/json"
+	"time"
 )
 
 // A filesLogWriter manages several fileLogWriter
@@ -53,17 +54,11 @@ func (f *multiFileLogWriter) Init(config string) error {
 	f.fullLogWriter = writer
 	f.writers[LevelDebug+1] = writer
 
-	// unmarshal "separate" field to f.Separate
-	err = json.Unmarshal([]byte(config), f)
-	if err != nil {
-		return err
-	}
+	//unmarshal "separate" field to f.Separate
+	json.Unmarshal([]byte(config), f)
 
 	jsonMap := map[string]interface{}{}
-	err = json.Unmarshal([]byte(config), &jsonMap)
-	if err != nil {
-		return err
-	}
+	json.Unmarshal([]byte(config), &jsonMap)
 
 	for i := LevelEmergency; i < LevelDebug+1; i++ {
 		for _, v := range f.Separate {
@@ -72,23 +67,13 @@ func (f *multiFileLogWriter) Init(config string) error {
 				jsonMap["level"] = i
 				bs, _ := json.Marshal(jsonMap)
 				writer = newFileWriter().(*fileLogWriter)
-				err := writer.Init(string(bs))
-				if err != nil {
-					return err
-				}
+				writer.Init(string(bs))
 				f.writers[i] = writer
 			}
 		}
 	}
+
 	return nil
-}
-
-func (f *multiFileLogWriter) Format(lm *LogMsg) string {
-	return lm.OldStyleFormat()
-}
-
-func (f *multiFileLogWriter) SetFormatter(fmt LogFormatter) {
-	f.fullLogWriter.SetFormatter(f)
 }
 
 func (f *multiFileLogWriter) Destroy() {
@@ -99,14 +84,28 @@ func (f *multiFileLogWriter) Destroy() {
 	}
 }
 
-func (f *multiFileLogWriter) WriteMsg(lm *LogMsg) error {
+func (f *multiFileLogWriter) WriteMsg(when time.Time, msg string, level int) error {
 	if f.fullLogWriter != nil {
-		f.fullLogWriter.WriteMsg(lm)
+		f.fullLogWriter.WriteMsg(when, msg, level)
 	}
 	for i := 0; i < len(f.writers)-1; i++ {
 		if f.writers[i] != nil {
-			if lm.Level == f.writers[i].Level {
-				f.writers[i].WriteMsg(lm)
+			if level == f.writers[i].Level {
+				f.writers[i].WriteMsg(when, msg, level)
+			}
+		}
+	}
+	return nil
+}
+
+func (f *multiFileLogWriter) WriteOriginalMsg(when time.Time, msg string, level int) error {
+	if f.fullLogWriter != nil {
+		f.fullLogWriter.WriteOriginalMsg(when, msg, level)
+	}
+	for i := 0; i < len(f.writers)-1; i++ {
+		if f.writers[i] != nil {
+			if level == f.writers[i].Level {
+				f.writers[i].WriteOriginalMsg(when, msg, level)
 			}
 		}
 	}
@@ -123,8 +122,7 @@ func (f *multiFileLogWriter) Flush() {
 
 // newFilesWriter create a FileLogWriter returning as LoggerInterface.
 func newFilesWriter() Logger {
-	res := &multiFileLogWriter{}
-	return res
+	return &multiFileLogWriter{}
 }
 
 func init() {

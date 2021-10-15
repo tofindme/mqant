@@ -12,14 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+// +build !windows
+
 package logs
 
-import (
-	"testing"
-)
+import "io"
 
-func TestConn(t *testing.T) {
-	log := NewLogger(1000)
-	log.SetLogger("conn", `{"net":"tcp","addr":":7020"}`)
-	log.Informational("informational")
+type ansiColorWriter struct {
+	w    io.Writer
+	mode outputMode
+}
+
+func (cw *ansiColorWriter) Write(p []byte) (int, error) {
+	return cw.w.Write(p)
 }

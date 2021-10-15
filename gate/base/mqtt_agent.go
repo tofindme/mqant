@@ -289,6 +289,8 @@ func (age *agent) recoverworker(pack *mqtt.Pack) {
 			if err != nil {
 				if needreturn {
 					toResult(age, *pub.GetTopic(), result, err.Error())
+				}else{
+					log.Error("agent recoverworker route pub.GetTopic() %v err %v",*pub.GetTopic(),err)
 				}
 				return
 			}
