@@ -1,1 +1,1 @@
-# myMqant
+# from https://github.com/liangdas/mqant
