@@ -50,6 +50,6 @@ func (lm *LogMsg) OldStyleFormat() string {
 		msg = fmt.Sprintf("[%s:%d] %s", filePath, lm.LineNumber, msg)
 	}
 
-	msg = levelPrefix[lm.Level] + " " + msg
+	msg = LevelPrefix[lm.Level] + " " + msg
 	return msg
 }

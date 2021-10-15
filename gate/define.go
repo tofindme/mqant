@@ -45,7 +45,7 @@ type GateHandler interface {
 	BroadCast(span log.TraceSpan, topic string, body []byte) (int64, string)                               //广播消息给网关所有在连客户端
 	//查询某一个userId是否连接中，这里只是查询这一个网关里面是否有userId客户端连接，如果有多个网关就需要遍历了
 	IsConnect(span log.TraceSpan, Sessionid string, Userid string) (result bool, err string)
-	OnlineUserIds(span log.TraceSpan)[]string
+	OnlineUserIds(span log.TraceSpan) (string, error)                            // 只能返回支持的类型，或者自定义的类型
 	Close(span log.TraceSpan, Sessionid string) (result interface{}, err string) //主动关闭连接
 	Update(span log.TraceSpan, Sessionid string) (result Session, err string)    //更新整个Session 通常是其他模块拉取最新数据
 	OnDestroy()                                                                  //退出事件,主动关闭所有的连接

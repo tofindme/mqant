@@ -16,6 +16,7 @@
 package basegate
 
 import (
+	"encoding/json"
 	"fmt"
 	"runtime"
 
@@ -327,17 +328,19 @@ func (h *handler) BroadCast(span log.TraceSpan, topic string, body []byte) (int6
 	return count, ""
 }
 
-func (h *handler) OnlineUserIds(span log.TraceSpan) (result []string) {
+func (h *handler) OnlineUserIds(span log.TraceSpan) (result string, err error) {
+	uids := []string{}
 	h.sessions.Range(func(key, agent interface{}) bool {
 		e := agent.(gate.Agent)
 		if e != nil {
 			if !e.GetSession().IsGuest() {
-				result = append(result, e.GetSession().GetUserID())
+				uids = append(uids, e.GetSession().GetUserID())
 			}
 		}
 		return true
 	})
-	return result
+	buf, _ := json.Marshal(uids)
+	return string(buf), nil
 }
 
 /**

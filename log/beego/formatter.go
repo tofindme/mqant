@@ -69,7 +69,7 @@ func (p *PatternLogFormatter) ToString(lm *LogMsg) string {
 		'm': lm.Msg,
 		'n': strconv.Itoa(lm.LineNumber),
 		'l': strconv.Itoa(lm.Level),
-		't': levelPrefix[lm.Level],
+		't': LevelPrefix[lm.Level],
 		'T': levelNames[lm.Level],
 		'F': lm.FilePath,
 	}
