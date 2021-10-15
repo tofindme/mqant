@@ -327,6 +327,19 @@ func (h *handler) BroadCast(span log.TraceSpan, topic string, body []byte) (int6
 	return count, ""
 }
 
+func (h *handler) OnlineUserIds(span log.TraceSpan) (result []string) {
+	h.sessions.Range(func(key, agent interface{}) bool {
+		e := agent.(gate.Agent)
+		if e != nil {
+			if !e.GetSession().IsGuest() {
+				result = append(result, e.GetSession().GetUserID())
+			}
+		}
+		return true
+	})
+	return result
+}
+
 /**
  *主动关闭连接
  */

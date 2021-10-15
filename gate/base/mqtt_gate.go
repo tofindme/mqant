@@ -218,6 +218,7 @@ func (gt *Gate) OnInit(subclass module.RPCModule, app module.App, settings *conf
 	gt.GetServer().RegisterGO("BroadCast", gt.opts.GateHandler.BroadCast)
 	gt.GetServer().RegisterGO("IsConnect", gt.opts.GateHandler.IsConnect)
 	gt.GetServer().RegisterGO("Close", gt.opts.GateHandler.Close)
+	gt.GetServer().RegisterGO("OnlineUserIds",gt.opts.GateHandler.OnlineUserIds)
 }
 
 func (gt *Gate) Run(closeSig chan bool) {
