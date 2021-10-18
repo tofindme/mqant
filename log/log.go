@@ -22,6 +22,7 @@ import (
 
 var beego *beegolog.BeeLogger
 var bi *beegolog.BeeLogger
+var le *beegolog.BeeLogger
 
 // InitLog 初始化日志
 func InitLog(debug bool, ProcessID string, Logdir string, settings map[string]interface{}) {
@@ -31,6 +32,10 @@ func InitLog(debug bool, ProcessID string, Logdir string, settings map[string]in
 // InitBI 初始化BI日志
 func InitBI(debug bool, ProcessID string, Logdir string, settings map[string]interface{}) {
 	bi = NewBeegoLogger(debug, ProcessID, Logdir, settings)
+}
+
+func InitErrLog(debug bool, ProcessID string, Logdir string, settings map[string]interface{}) {
+	le = NewBeegoLogger(debug, ProcessID, Logdir, settings)
 }
 
 // LogBeego LogBeego
@@ -44,6 +49,10 @@ func LogBeego() *beegolog.BeeLogger {
 // BiBeego BiBeego
 func BiBeego() *beegolog.BeeLogger {
 	return bi
+}
+
+func ErrLogFile() *beegolog.BeeLogger {
+	return le
 }
 
 // CreateRootTrace CreateRootTrace
@@ -86,6 +95,9 @@ func Info(format string, a ...interface{}) {
 // Error Error
 func Error(format string, a ...interface{}) {
 	//gLogger.doPrintf(errorLevel, printErrorLevel, format, a...)
+	if le != nil {
+		le.Error(nil, format, a...)
+	}
 	LogBeego().Error(nil, format, a...)
 }
 

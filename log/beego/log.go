@@ -40,7 +40,9 @@ import (
 	"github.com/json-iterator/go"
 	"log"
 	"os"
+	"path"
 	"runtime"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -386,21 +388,21 @@ func (bl *BeeLogger) formatText(when time.Time, span *BeegoTraceSpan, logLevel i
 		msg = fmt.Sprintf(msg, v...)
 	}
 	if bl.enableFuncCallDepth {
-		//_, file, line, ok := runtime.Caller(bl.loggerFuncCallDepth)
-		//if !ok {
-		//	file = "???"
-		//	line = 0
-		//}
-		//_, filename := path.Split(file)
-		//msg = "[" + filename + ":" + strconv.Itoa(line) + "] " + msg
-		if logLevel <= LevelWarn {
-			CallStack, ShortFile := GetCallStack(5, bl.loggerFuncCallDepth, "")
-			msg = "[" + ShortFile + "] " + msg + " " + CallStack
-		} else {
-			//太耗性能
-			//_, ShortFile := GetCallStack(5, bl.loggerFuncCallDepth, "")
-			//msg = "[" + ShortFile + "] " + msg
+		_, file, line, ok := runtime.Caller(bl.loggerFuncCallDepth)
+		if !ok {
+			file = "???"
+			line = 0
 		}
+		_, filename := path.Split(file)
+		msg = "[" + filename + ":" + strconv.Itoa(line) + "] " + msg
+		//if logLevel <= LevelWarn {
+		//	CallStack, ShortFile := GetCallStack(5, bl.loggerFuncCallDepth, "")
+		//	msg = "[" + ShortFile + "] " + msg + " " + CallStack
+		//} else {
+		//	//太耗性能
+		//	//_, ShortFile := GetCallStack(5, bl.loggerFuncCallDepth, "")
+		//	//msg = "[" + ShortFile + "] " + msg
+		//}
 
 	}
 
@@ -494,6 +496,9 @@ func (bl *BeeLogger) writeMsg(span *BeegoTraceSpan, logLevel int, msg string, v 
 		bl.lock.Unlock()
 	}
 
+	if logLevel == levelLoggerImpl {
+		logLevel = LevelEmergency
+	}
 	when := time.Now()
 	original := false
 	if bl.formatFunc != nil {

@@ -219,7 +219,8 @@ func (app *DefaultApp) Run(mods ...module.Module) error {
 	}
 
 	log.InitLog(app.opts.Debug, app.opts.ProcessID, app.opts.LogDir, cof.Log)
-	log.InitBI(app.opts.Debug, app.opts.ProcessID, app.opts.BIDir, cof.BI)
+	log.InitErrLog(app.opts.Debug, app.opts.ProcessID+"_error", app.opts.LogDir, cof.Log)
+	//log.InitBI(app.opts.Debug, app.opts.ProcessID, app.opts.BIDir, cof.BI)
 
 	log.Info("mqant %v starting up", app.opts.Version)
 
