@@ -27,6 +27,6 @@ func TestBeeLoggerDelLogger(t *testing.T) {
 	l.Print("hello")
 
 	GetLogger().Print("hello")
-	SetPrefix("aaa")
+	//SetPrefix("aaa")
 	Info("hello")
 }
