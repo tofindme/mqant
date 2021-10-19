@@ -241,7 +241,7 @@ func (app *DefaultApp) Run(mods ...module.Module) error {
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGTERM)
 	sig := <-c
-	log.BiBeego().Flush()
+	log.ErrLogFile().Flush()
 	log.LogBeego().Flush()
 	//如果一分钟都关不了则强制关闭
 	timeout := time.NewTimer(app.opts.KillWaitTTL)
@@ -257,7 +257,7 @@ func (app *DefaultApp) Run(mods ...module.Module) error {
 	case <-wait:
 		log.Info("mqant closing down (signal: %v)", sig)
 	}
-	log.BiBeego().Close()
+	log.ErrLogFile().Close()
 	log.LogBeego().Close()
 	return nil
 }
